@@ -15,5 +15,14 @@ export default function QueryProcessor(query: string): string {
     return "brenday";
   }
 
+  if (query.toLowerCase().includes("largest")) {
+    const numbers = query.match(/\d+/g);
+
+    if (numbers) {
+      const max = Math.max(...numbers.map(Number));
+      return max.toString();
+    }
+  }
+  
   return "";
 }
