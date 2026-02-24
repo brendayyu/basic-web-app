@@ -70,6 +70,18 @@ export default function QueryProcessor(query: string): string {
       return primes.join(", ");
     }
   }
+
+  if (query.toLowerCase().includes("power")) {
+    const numbers = query.match(/\d+/g);
+
+    if (numbers && numbers.length >= 2) {
+      const base = BigInt(numbers[0]);
+      const exponent = BigInt(numbers[1]);
+
+      const result = base ** exponent;
+      return result.toString();
+    }
+  }
   
   // if (query.toLowerCase().includes("square") && query.toLowerCase().includes("cube")) {
   //   const numbers = query.match(/\d+/g);
