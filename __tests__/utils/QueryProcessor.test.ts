@@ -57,4 +57,12 @@ describe("QueryProcessor", () => {
             "6375"
           ));
     })
+
+    test('should return the subtraction of two numbers', () => {
+        const query = "What is 10 minus 74?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "-64"
+          ));
+    })
 });

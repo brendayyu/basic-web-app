@@ -37,10 +37,28 @@ export default function QueryProcessor(query: string): string {
     const numbers = query.match(/\d+/g);
 
     if (numbers && numbers.length >= 2) {
-      const sum = numbers.map(Number).reduce((a, b) => a * b);
-      return sum.toString();
+      const multiplication = numbers.map(Number).reduce((a, b) => a * b);
+      return multiplication.toString();
     }
   }
+  
+  if (query.toLowerCase().includes("minus")) {
+    const numbers = query.match(/\d+/g);
+
+    if (numbers && numbers.length >= 2) {
+      const subtraction = numbers.map(Number).reduce((a, b) => a - b);
+      return subtraction.toString();
+    }
+  }
+  
+  // if (query.toLowerCase().includes("square") && query.toLowerCase().includes("cube")) {
+  //   const numbers = query.match(/\d+/g);
+
+  //   if (numbers && numbers.length >= 2) {
+  //     const sum = numbers.map(Number).reduce((a, b) => a * b);
+  //     return sum.toString();
+  //   }
+  // }
   
   return "";
 }
