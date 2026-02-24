@@ -42,11 +42,19 @@ describe("QueryProcessor", () => {
           ));
     })
 
-    test('should return lthe sum of two numbers', () => {
+    test('should return the sum of two numbers', () => {
         const query = "What is 16 plus 68?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
             "84"
+          ));
+    })
+
+    test('should return the multiplication of two numbers', () => {
+        const query = "What is 85 multiplied by 75?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "6375"
           ));
     })
 });
