@@ -50,6 +50,26 @@ export default function QueryProcessor(query: string): string {
       return subtraction.toString();
     }
   }
+
+  if (query.toLowerCase().includes("primes")) {
+    const numbers = query.match(/\d+/g);
+
+    if (numbers) {
+      const isPrime = (num: number): boolean => {
+        if (num < 2) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) return false;
+        }
+        return true;
+      };
+
+      const primes = numbers
+        .map(Number)
+        .filter(isPrime);
+
+      return primes.join(", ");
+    }
+  }
   
   // if (query.toLowerCase().includes("square") && query.toLowerCase().includes("cube")) {
   //   const numbers = query.match(/\d+/g);
