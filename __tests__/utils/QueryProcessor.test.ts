@@ -41,4 +41,12 @@ describe("QueryProcessor", () => {
             "56"
           ));
     })
+
+    test('should return lthe sum of two numbers', () => {
+        const query = "What is 16 plus 68?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "84"
+          ));
+    })
 });
